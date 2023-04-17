@@ -1,0 +1,48 @@
+Parameters:
+    VpcCIDR:
+     Default: 10.0.0.0/16
+     Description: Please enter the IP Range for this VPC
+     Type: String
+​
+    PublicSubnet1CIDR:
+      Default: 10.0.0.0/24
+      Description: Please enter the IP Range for the public subnet 1
+      Type: String
+​
+    PublicSubnet2CIDR:
+      Default: 10.0.1.0/24
+      Description: Please enter the IP Range for the public subnet 2
+      Type: String
+​
+    PrivateSubnet1CIDR:
+      Default: 10.0.2.0/24
+      Description: Please enter the IP Range for the private subnet 1
+      Type: String
+​
+    PrivateSubnet2CIDR:
+      Default: 10.0.3.0/24
+      Description: Please enter the IP Range for the private subnet 2
+      Type: String
+​
+    SubnetAvailabilityZones:
+      Type: List<AWS::EC2::AvailabilityZone::Name>
+      Description: Select the two availability zones where the resources should be launched
+      Default: "us-east-1a,us-east-1b"
+      AllowedValues: 
+        - us-east-1a
+        - us-east-1b
+        - us-east-1d
+        - us-east-1e 
+        - us-east-1f
+      ConstraintDescription: Please select exactly two 
+      
+​
+    InstanceType: 
+      Description: Webserver EC2 Instance Type 
+      Type: String
+      Default: t2.micro
+      AllowedValues:
+        - t2.micro
+        - t2.nano
+        - t2.small
+        - t2.medium
